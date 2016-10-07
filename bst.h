@@ -48,8 +48,6 @@ protected:
 
     void print(Node<V>* &tree);
 
-    Node<V>* rightmost(Node<V>*& tree, V value);
-
 private:
     Node<V>* root;
 };

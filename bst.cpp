@@ -110,7 +110,6 @@ void BST<V>::remove(Node<V>* &tree, V value)
         }
         else
         {
-            // TODO:
             // node has both branches
             // find right-most node of left sub-tree
             Node<V>* node_to_delete = tree->left;
@@ -156,10 +155,4 @@ void BST<V>::print(Node<V>* &tree)
         print(tree->left);
         print(tree->right);
     }
-}
-
-template <typename V>
-Node<V>* rightmost(Node<V>*& tree)
-{
-
 }
