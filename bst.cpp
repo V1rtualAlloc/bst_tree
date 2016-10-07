@@ -112,9 +112,14 @@ void BST<V>::remove(Node<V>* &tree, V value)
         {
             // TODO:
             // node has both branches
-            // Node<V>* node_to_swap = rightmost(tree);
-            // std::swap(node_to_swap->value, tree->value);
-            // node_to_swap
+            // find right-most node of left sub-tree
+            Node<V>* node_to_delete = tree->left;
+            while (node_to_delete->right != nullptr)
+                node_to_delete = node_to_delete->right;
+            // swap the values
+            std::swap(tree->value, node_to_delete->value);
+            // destroy the duplicated node
+            destroy(node_to_delete);
         }
     }
     else if (value < tree->value)
